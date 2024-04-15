@@ -16,6 +16,9 @@ const lista = [
     },
 ]
 
+app.get('/lista', async (res, req)=> {
+    return res.status(200).json({lista})
+})
 
 app.listen(3000, ()=>{ 
     console.log('servidor rodando na porta 3000')
