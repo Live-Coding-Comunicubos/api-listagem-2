@@ -16,6 +16,11 @@ const lista = [
     },
 ]
 
+app.get('/lista', async (res, req)=> {
+    return res.status(200).json({lista})
+})
+
+
 app.get('/lista/:id', async (req, res) => {
     return res.status(200).json({
         lista: lista.filter((usuario) => usuario.id === req.params.id)
