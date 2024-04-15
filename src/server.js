@@ -16,6 +16,11 @@ const lista = [
     },
 ]
 
+app.delete("/lista/:id", (req, res)=> {
+    const indexUsuario = lista.findIndex((usuario) => usuario.id === id);
+    lista.splice(indexUsuario, 1);
+    return res.status(200).json({ texto:"usuario excluido"})
+
 app.get('/lista', async (res, req)=> {
     return res.status(200).json({lista})
 })
